@@ -40,11 +40,11 @@ function L = lbp(X, raio, vizinhos)
 		cx = ceil(x);
 		cy = ceil(y);
 		% fractional parts
-		% Partes fracionarias.
+		% Calcula as partes fracionárias, subtranindo do numero original o seu numero imediatamente menor.
 		tx = x - fx;
 		ty = y - fy;
 		% interpolation weights
-		% Interpolando pesos
+		% Calculando pesos de interpolação
 		w1 = (1 - tx) * (1 - ty);
 		w2 =      tx  * (1 - ty);
 		w3 = (1 - tx) *      ty ;
@@ -53,7 +53,7 @@ function L = lbp(X, raio, vizinhos)
 		% Adquirindo a imagem interpolada
 		N = w1*X(fy:fy+dy,fx:fx+dx) + w2*X(fy:fy+dy,cx:cx+dx) + w3*X(cy:cy+dy,fx:fx+dx) + w4*X(cy:cy+dy,cx:cx+dx);
 		% calculate binary value for current neighbor, update result
-		% Calcula o valor binario refente a vizinhaça correspondente, resultado atualizado.
+		% Calcula o valor binario refente a vizinhaça correspondente e atualiza o resultado.
 		L += (N>=C)*(2^(n-1));
 	end
 end
