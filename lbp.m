@@ -33,8 +33,10 @@ function L = lbp(X, raio, vizinhos)
 		x = raio * cos(2*pi*((n-1)/vizinhos)) + origx;
 		% relative indices
 		% Indices Relativos
+		% Valores imediatamente menores
 		fx = floor(x);
 		fy = floor(y);
+		% Valores imediatamente maiores
 		cx = ceil(x);
 		cy = ceil(y);
 		% fractional parts
