@@ -1,17 +1,14 @@
-% Copyright (c) Philipp Wagner. All rights reserved.
-% Licensed under the BSD license. See LICENSE file in the project root for full license information.
-
 function X = reconstruct(W, Y, mu)
-    %%  Reonstruct Y from X using W, pass mu to adjust mean.
+    %%	Reconstroi Y usando W, passando mu para ajuste da média.
+    %%  
+    %%	Argumentos:
+    %%	  Y [num_components x num_dados] projeção
+    %%    W [dimensao x num_componentes] matriz de tranformação
+    %%    mu [dimensao x 1] amostra de media (opcional)
     %%
-    %%  Args:
-    %%    Y [num_components x num_data] projection
-    %%    W [dim x num_components] transformation matrix
-    %%    mu [dim x 1] sample mean (optional)
-    %%
-    %%  Returns:
+    %%  Retorno:
     %%    X [dim x num_data] reconstruct data
-    %%
+    %%    X [dimensao x num_dado] dados reconstruidos.
     if(nargin<3)
         X = W * Y;
     else
